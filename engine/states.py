@@ -1,15 +1,7 @@
-class field_states:
-    def __init__(self):
-        self.value = ''
-    
-    def __str__(self):
-        return self.value
-    
-    def running(self):
-        self.value = 'running'
+import enum
 
-    def x_over(self):
-        self.value = 'x wins'
-    
-    def o_over(self):
-        self.value = 'x wins'
+class field_st(enum.Enum):
+    running = 0
+    x_win = 1
+    o_win = 2
+    draw = 3
