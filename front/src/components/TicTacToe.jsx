@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import Cell from "./Cell";
 
- enum CELL_STATE {
-    X = 1,
-    O = 2,
-    EMPTY = 0
+ const CELL_STATE  = {
+    X: 1,
+    O: 2,
+    EMPTY: 0
 }
 
 
@@ -16,14 +16,7 @@ function TicTacToe(props) {
     const [grid, setGrid] = useState(initialArray);
     const [isPlayerX, setIsPlayerX] = useState(true);
     const handleButtonClick = (row, col) => {
-        // const newGrid = grid.map((r, rowIndex) =>
-        //     r.map((cell, colIndex) => {
-        //         if (rowIndex === row && colIndex === col) {
-        //             return 1;
-        //         }
-        //         return cell;
-        //     })
-        // );
+
         grid[row][col] = isPlayerX ? CELL_STATE.X : CELL_STATE.O;
         setIsPlayerX((prevState) => !prevState);
 
