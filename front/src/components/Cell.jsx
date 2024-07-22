@@ -3,27 +3,11 @@ import ButtonSetStep from "./ButtonSetStep";
 
 function Cell(props) {
     return (
-        <div>
-            <div className={"flex"}>
-                <ButtonSetStep set={1}/>
-                <ButtonSetStep set={0}/>
-                <ButtonSetStep set={2}/>
+        <div className={"grid grid-cols-3"}>
+            {props.row.map((cell, cellIndex)=>(
+                <ButtonSetStep key={cellIndex} function={props.function} rowIndex={props.row_index} cellIndex={cellIndex}  set={cell}/>
 
-            </div>
-            <div className={"flex"}>
-                <ButtonSetStep set={0}/>
-                <ButtonSetStep set={0}/>
-                <ButtonSetStep set={0}/>
-
-            </div>
-            <div className={"flex"}>
-                <ButtonSetStep set={1}/>
-                <ButtonSetStep set={2}/>
-                <ButtonSetStep set={1}/>
-
-            </div>
-
-
+            ))}
         </div>
     );
 }
